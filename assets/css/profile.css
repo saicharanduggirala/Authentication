@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('') no-repeat;
+    box-sizing: border-box;
+
+}
+
+#nav-bar {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    background: #7B66FF;
+
+}
+
+#profile-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px;
+}
+
+#profile-btns button {
+    width: 100px;
+    height: 40px;
+    padding: 0px 0px;
+    margin-right: 10px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255 .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+button a {
+    text-decoration: none;
+    padding: 2px 2px;
+    color: black;
+}
+
+#logo img {
+    width: 50px;
+    height: 50px;
+}
+
+#text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

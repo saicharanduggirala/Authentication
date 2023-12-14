@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication.io | Profile</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/profile.css">
+    <!-- Link the noty cdn css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+        integrity="sha512-0p3K0H3S6Q4bEWZ/WmC94Tgit2ular2/n0ESdfEX8l172YyQj8re1Wu9s/HT9T/T2osUw5Gx/6pAZNk3UKbESw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link the noty cdn js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
+        integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+    <% if (messages.error) { %>
+        <p class="error">
+            <%= messages.error %>
+        </p>
+        <% } %>
+            <% if (messages.success) { %>
+                <p class="success">
+                    <%= messages.success %>
+                </p>
+                <% } %>
+
+
+                    <div id="nav-bar">
+                        <div id="logo">
+                            <img src="../assets/images/image2.jpeg" alt="logo">
+                        </div>
+                        <div id="profile-btns">
+                            <div id="signOut-btn">
+                                <button><a href="/sign-out">Sign Out</a></button>
+                            </div>
+                            <div class="resetPass-btn">
+                                <button><a href="/reset">Reset Password</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text">
+                        <h1>Welcome to Awesomenesss!!!!!</h1>
+
+                    </div>
+
+                    <script>
+        <% if (locals.flash.success && flash.success.length > 0) {%>
+                            new Noty({
+                                theme: 'relax',
+
+                                text: '<%= flash.success %>',
+                                type: 'success',
+                                layout: 'topRight',
+                                timeout: 1900,
+
+                            }).show();
+        <%} %>
+    
+        <% if (locals.flash.error && flash.error.length > 0) {%>
+                            new Noty({
+                                theme: 'relax',
+
+                                text: '<%= flash.error %>',
+                                type: 'error',
+                                layout: 'topRight',
+                                timeout: 1900,
+
+                            }).show();
+        <%} %>
+                    </script>
+</body>
+
+</html>
