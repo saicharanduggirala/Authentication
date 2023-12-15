@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "deploy": "npm run render-templates && gh-pages -d public",
-    "render-templates": "node render-templates.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "authentication"
