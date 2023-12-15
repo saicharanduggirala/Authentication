@@ -1,13 +1,15 @@
 const express = require('express');
-const env = require('./config/environment');
+
+// const env = require('./config/environment');
+const env = require('dotenv').config();
+
 const port = 5000;
 
 const app = express();
-
 const db = require("./config/mongoose");
 const path = require('path');
 var cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 
 // used for session cookie
 app.use(cookieParser())
@@ -20,7 +22,7 @@ const flash = require('express-flash');
 const customMware = require('./config/flashMiddleware');
 
 
-app.use('/assets', express.static(env.asset_path));
+app.use('/assets', express.static(process.env.asset_path));
 
 const MongoStore = require('connect-mongo');
 const mongodb = require('mongodb');
@@ -35,7 +37,7 @@ app.set('views', './views');
 
 app.use(session({
     name: 'Authentication',
-    secret: env.session_cookie_key,
+    secret: process.env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -45,7 +47,7 @@ app.use(session({
     ,
     store: MongoStore.create(
         {
-            mongoUrl: 'mongodb://127.0.0.1:27017/Authentication', // Use this line to specify the Mongoose connection
+            mongoUrl: process.env.DB_URL, // Use this line to specify the Mongoose connection
             autoRemove: 'disabled',
             dbName: 'Authentication',
             client: mongodb.MongoClient
