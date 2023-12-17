@@ -60,7 +60,7 @@ module.exports.create = function (req, res) {
 // }
 
 module.exports.startSession = function (req, res) {
-  return res.render('profile', {messages});
+  return res.render('profile');
 }
 
 module.exports.endSession = function (req, res) {
