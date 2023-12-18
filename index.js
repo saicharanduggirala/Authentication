@@ -1,6 +1,5 @@
 const express = require('express');
 
-// const env = require('./config/environment');
 const env = require('dotenv').config();
 
 const port = 5000;
@@ -36,7 +35,7 @@ app.set('views', './views');
 
 
 app.use(session({
-    name: 'Authentication',
+    name: process.env.db,
     secret: process.env.session_cookie_key,
     saveUninitialized: false,
     resave: false,

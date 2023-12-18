@@ -30,51 +30,51 @@
                 <% } %> -->
 
 
-                    <div id="text">
-                        <h1>Hey There!!! Welcomeeeee to Authentication.io</h1>
-                    </div>
-                    <div id="main-container">
-                        <h2>Are you a...</h2>
-                        <div id="button-container">
-                            <div class="q1">
-                                <button><a href="/sign-up">New User</a></button>
-                            </div>
-                            <div id="or">
-                                <h3>or
+    <div id="text">
+        <h1>Hey There!!! Welcomeeeee to Authentication.io</h1>
+    </div>
+    <div id="main-container">
+        <h2>Are you a...</h2>
+        <div id="button-container">
+            <div class="q1">
+                <button><a href="/sign-up">New User</a></button>
+            </div>
+            <div id="or">
+                <h3>or
 
-                                </h3>
-                            </div>
-                            <div class="q2">
-                                <button><a href="/sign-in">Existing User</a></button>
-                            </div>
-                        </div>
-                    </div>
+                </h3>
+            </div>
+            <div class="q2">
+                <button><a href="/sign-in">Existing User</a></button>
+            </div>
+        </div>
+    </div>
 
-                    <script>
+    <script>
         <% if (locals.flash.success && flash.success.length > 0) {%>
-                            new Noty({
-                                theme: 'relax',
+            new Noty({
+                theme: 'relax',
 
-                                text: '<%= flash.success %>',
-                                type: 'success',
-                                layout: 'topRight',
-                                timeout: 1900,
+                text: '<%= flash.success %>',
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1900,
 
-                            }).show();
+            }).show();
         <%} %>
     
         <% if (locals.flash.error && flash.error.length > 0) {%>
-                            new Noty({
-                                theme: 'relax',
+            new Noty({
+                theme: 'relax',
 
-                                text: '<%= flash.error %>',
-                                type: 'error',
-                                layout: 'topRight',
-                                timeout: 1900,
+                text: '<%= flash.error %>',
+                type: 'error',
+                layout: 'topRight',
+                timeout: 1900,
 
-                            }).show();
+            }).show();
         <%} %>
-                    </script>
+    </script>
 </body>
 
 </html>
